@@ -1,0 +1,190 @@
+/* Cetárea El Musel — versión renovada (prototipo) */
+:root {
+  --rojo: #d7263d;
+  --rojo-oscuro: #b51d31;
+  --marino: #23244a;
+  --marino-2: #1a1b38;
+  --arena: #f6f3ee;
+  --texto: #2f3040;
+  --suave: #6b6d80;
+  --borde: #e6e2da;
+  --wa: #25d366;
+  --ancho: 1200px;
+  --radio: 14px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { margin: 0; font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--texto); background: #fff; font-size: 16px; line-height: 1.6; }
+h1, h2, h3 { font-family: "Outfit", "Inter", sans-serif; color: var(--marino); line-height: 1.15; margin: 0 0 .5em; }
+img { max-width: 100%; display: block; }
+a { color: var(--rojo); }
+.contenedor { max-width: var(--ancho); margin: 0 auto; padding: 0 20px; }
+.etiqueta { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--rojo); margin-bottom: 10px; }
+
+/* Botones */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 15px; border: 2px solid transparent; transition: background .2s, transform .2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn-rojo { background: var(--rojo); color: #fff; }
+.btn-rojo:hover { background: var(--rojo-oscuro); }
+.btn-wa { background: var(--wa); color: #08361a; }
+.btn-borde { border-color: currentColor; color: #fff; }
+.btn-borde.oscuro { color: var(--marino); }
+.btn svg { width: 18px; height: 18px; }
+
+/* Cabecera */
+.cabecera { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--borde); }
+.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+.cabecera .logo img { height: 40px; }
+.nav { display: flex; align-items: center; gap: 26px; }
+.nav a { color: var(--marino); text-decoration: none; font-weight: 500; font-size: 15px; }
+.nav a:hover { color: var(--rojo); }
+.nav .btn { padding: 9px 16px; font-size: 14px; color: #08361a; }
+.hamburguesa { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.hamburguesa span { display: block; width: 24px; height: 2px; background: var(--marino); margin: 5px 0; }
+
+/* Hero */
+.hero { position: relative; min-height: 640px; display: flex; align-items: center; color: #fff; background: var(--marino-2) url(../../assets/img/slide-3-barco-rojo.jpg) right center / cover no-repeat; }
+.hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,27,56,.94) 0%, rgba(26,27,56,.85) 45%, rgba(26,27,56,.25) 100%); }
+.hero .contenedor { position: relative; width: 100%; }
+.hero-texto { max-width: 600px; }
+.hero h1 { color: #fff; font-size: clamp(36px, 5vw, 58px); font-weight: 600; }
+.hero p { font-size: 19px; color: #dfe0ee; margin: 0 0 30px; }
+.hero .botones { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero .etiqueta { color: #ff8c9a; }
+
+/* Cifras */
+.cifras { background: var(--marino); color: #fff; }
+.cifras .contenedor { display: grid; grid-template-columns: repeat(4, 1fr); }
+.cifra { padding: 28px 18px; border-right: 1px solid rgba(255,255,255,.12); }
+.cifra:last-child { border-right: 0; }
+.cifra strong { display: block; font-family: "Outfit", sans-serif; font-size: 30px; color: #fff; }
+.cifra span { color: #c8c9dc; font-size: 14px; }
+
+/* Secciones */
+.seccion { padding: 96px 0; }
+.seccion.arena { background: var(--arena); }
+.cabeza { max-width: 680px; margin-bottom: 44px; }
+.cabeza h2 { font-size: clamp(30px, 3.6vw, 42px); }
+.cabeza p { color: var(--suave); font-size: 18px; margin: 0; }
+
+/* Productos */
+.productos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.producto { background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 22px; }
+.producto h3 { font-size: 20px; margin-bottom: 4px; }
+.producto p { color: var(--suave); font-size: 14px; margin: 0 0 12px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--arena); color: var(--marino); }
+.chip.vivo { background: #e7f6ee; color: #146b3a; }
+.nota { color: var(--suave); font-size: 14px; margin-top: 18px; }
+
+/* Hostelería */
+.hosteleria { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.hosteleria img { border-radius: var(--radio); width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: right; }
+.ventajas { list-style: none; padding: 0; margin: 0 0 30px; display: grid; gap: 16px; }
+.ventajas li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; }
+.ventajas .ico { width: 40px; height: 40px; border-radius: 10px; background: #fde8eb; color: var(--rojo); display: grid; place-items: center; font-weight: 700; }
+.ventajas strong { display: block; color: var(--marino); }
+.ventajas span { color: var(--suave); font-size: 15px; }
+
+/* Proceso */
+.proceso { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.paso { background: #fff; border-radius: var(--radio); overflow: hidden; border: 1px solid var(--borde); }
+.paso img { aspect-ratio: 3/2; object-fit: cover; width: 100%; }
+.paso div { padding: 22px; }
+.paso .num { font-family: "Outfit", sans-serif; color: var(--rojo); font-weight: 600; font-size: 14px; }
+.paso p { color: var(--suave); margin: 0; font-size: 15px; }
+
+/* Nosotros */
+.nosotros { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.nosotros img { border-radius: var(--radio); }
+.nosotros p { color: var(--suave); }
+.mapa-zonas { font-weight: 600; color: var(--marino); }
+
+/* Recetas */
+.recetas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.receta { text-decoration: none; color: inherit; }
+.receta img { border-radius: var(--radio); aspect-ratio: 4/3; object-fit: cover; width: 100%; margin-bottom: 12px; }
+.receta h3 { font-size: 18px; margin-bottom: 4px; }
+.receta p { color: var(--suave); font-size: 14px; margin: 0; }
+
+/* Contacto */
+.contacto { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.tarjeta-contacto { background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 28px; }
+.tarjeta-contacto dl { margin: 0; display: grid; grid-template-columns: 110px 1fr; gap: 12px 16px; }
+.tarjeta-contacto dt { color: var(--suave); font-size: 14px; }
+.tarjeta-contacto dd { margin: 0; font-weight: 500; }
+.tarjeta-contacto dd a { color: var(--marino); }
+table.horario { width: 100%; border-collapse: collapse; font-size: 15px; margin-top: 8px; }
+.horario td { padding: 8px 0; border-bottom: 1px solid var(--borde); }
+.horario td:last-child { text-align: right; color: var(--suave); }
+.horario tr.hoy td { color: var(--rojo); font-weight: 600; }
+.mapa { width: 100%; height: 100%; min-height: 380px; border: 0; border-radius: var(--radio); }
+.aviso { background: #fff7e0; border: 1px solid #f0d68a; border-radius: 8px; padding: 8px 12px; font-size: 13px; margin-top: 14px; color: #6b5300; }
+
+/* Pie */
+.pie { background: var(--marino-2); color: #c8c9dc; padding: 56px 0 28px; font-size: 14px; }
+.pie .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+.pie img.logo { height: 44px; margin-bottom: 14px; }
+.pie h4 { color: #fff; font-family: "Outfit", sans-serif; font-size: 16px; margin: 0 0 12px; }
+.pie a { color: #c8c9dc; text-decoration: none; display: block; margin-bottom: 6px; }
+.pie a:hover { color: #fff; }
+.pie .logos { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin: 36px 0 20px; padding: 16px; background: #fff; border-radius: 10px; justify-content: space-around; }
+.pie .logos img { max-height: 56px; width: auto; }
+.pie .final { border-top: 1px solid rgba(255,255,255,.12); padding-top: 18px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.pie .final a { display: inline; margin-left: 14px; }
+
+/* WhatsApp flotante */
+.wa-flotante { position: fixed; right: 20px; bottom: 20px; z-index: 30; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+.wa-flotante svg { width: 30px; height: 30px; fill: #fff; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .productos, .recetas { grid-template-columns: repeat(2, 1fr); }
+  .hosteleria, .nosotros, .contacto { grid-template-columns: 1fr; }
+  .proceso { grid-template-columns: 1fr; }
+  .cifras .contenedor { grid-template-columns: repeat(2, 1fr); }
+  .cifra:nth-child(2) { border-right: 0; }
+  .pie .cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .hamburguesa { display: block; }
+  .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 18px; border-bottom: 1px solid var(--borde); }
+  .nav.abierto { display: flex; }
+  .nav a { padding: 12px 0; border-bottom: 1px solid var(--borde); }
+  .nav .btn { margin-top: 12px; justify-content: center; border: 0; }
+  .hero { min-height: 560px; background-position: 70% center; }
+  .hero::before { background: rgba(26,27,56,.82); }
+  .seccion { padding: 64px 0; }
+  .productos { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .producto { padding: 14px; }
+  .producto h3 { font-size: 17px; }
+  .recetas { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .cifra { padding: 18px 12px; }
+  .cifra strong { font-size: 21px; }
+  .cifra span { font-size: 12px; }
+  .tarjeta-contacto dl { grid-template-columns: 1fr; gap: 2px; }
+  .tarjeta-contacto dd { margin-bottom: 10px; }
+}
+
+/* Páginas de receta */
+.estrecho { max-width: 780px; }
+.articulo { padding-top: 48px; }
+.articulo h1 { font-size: clamp(32px, 4.4vw, 48px); }
+.volver { display: block; width: fit-content; color: var(--suave); text-decoration: none; font-size: 14px; margin-bottom: 22px; }
+.volver:hover { color: var(--rojo); }
+.entradilla { font-size: 20px; color: var(--suave); margin: 0 0 28px; }
+.receta-banner { width: 100%; border-radius: var(--radio); aspect-ratio: 16/7; object-fit: cover; margin-bottom: 32px; }
+.texto { font-size: 17px; line-height: 1.75; }
+.texto h3 { font-size: 22px; margin: 34px 0 12px; }
+.texto .lista { padding-left: 22px; }
+.texto .lista li { margin-bottom: 10px; }
+.texto .destacado { font-size: 19px; color: var(--marino); }
+.texto table.tiempos { border-collapse: collapse; width: 100%; max-width: 420px; margin: 6px 0 22px; }
+.tiempos th { text-align: left; font-size: 14px; color: var(--suave); font-weight: 500; padding: 8px 0; border-bottom: 2px solid var(--borde); }
+.tiempos td { padding: 10px 0; border-bottom: 1px solid var(--borde); }
+.tiempos td:last-child, .tiempos th:last-child { text-align: right; font-weight: 600; color: var(--marino); }
+.cta-receta { margin-top: 44px; background: var(--marino); color: #fff; border-radius: var(--radio); padding: 24px 26px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.cta-receta strong { display: block; font-family: "Outfit", sans-serif; font-size: 20px; }
+.cta-receta span { color: #c8c9dc; font-size: 15px; }
+.recetas.tres { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .recetas.tres { grid-template-columns: 1fr 1fr; } .texto { font-size: 16px; } }

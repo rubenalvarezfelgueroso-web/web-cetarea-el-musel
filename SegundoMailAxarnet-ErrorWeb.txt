@@ -1,0 +1,13 @@
+Para: Axarnet (respuesta al email anterior)
+Asunto: RE: Solicitud de acceso a los contenidos de la web elmusel.es – EL MUSEL, S.L.
+
+Buenos días:
+
+Como complemento a mi email anterior, les informo de que la web elmusel.es está actualmente caída. Muestra el error "Web application could not be started by the Phusion Passenger application server" con el Error ID 05845ef9.
+
+Como no tenemos acceso a la cuenta de alojamiento, les agradeceríamos que revisaran el log de Passenger con ese identificador y, si es posible, reiniciaran la aplicación o nos indicaran la causa del fallo.
+
+Un saludo,
+Rubén Álvarez Felgueroso
+Colaborador técnico – EL MUSEL, S.L.
+727 780 775 · rubenalvarezfelgueroso@gmail.com

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prototipos web · Cetárea El Musel</title>
+  <style>
+    body { margin: 0; font-family: system-ui, "Segoe UI", sans-serif; background: #f6f3ee; color: #23244a; display: grid; place-items: center; min-height: 100vh; padding: 16px; box-sizing: border-box; }
+    main { max-width: 760px; width: 100%; text-align: center; }
+    img { height: 110px; margin: 0 auto 10px; display: block; }
+    .opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+    a.op { background: #fff; border: 1px solid #e6e2da; border-radius: 14px; padding: 26px; text-decoration: none; color: inherit; text-align: left; }
+    a.op:hover { border-color: #d7263d; }
+    a.op strong { display: block; font-size: 20px; margin-bottom: 6px; }
+    a.op span { color: #6b6d80; font-size: 15px; }
+    p.nota { color: #6b6d80; font-size: 14px; margin-top: 26px; }
+    @media (max-width: 600px) { .opciones { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="assets/img/logo.png" alt="Cetárea El Musel">
+    <h1>Prototipos de la web nueva</h1>
+    <div class="opciones">
+      <a class="op" href="fiel/index.html"><strong>Versión fiel</strong><span>Misma estructura y aspecto que la web anterior, con los fallos corregidos: imágenes rotas, erratas y SEO básico.</span></a>
+      <a class="op" href="renovada/index.html"><strong>Versión renovada</strong><span>Misma identidad con un diseño actual: una sola página, WhatsApp siempre a mano y una sección propia para hostelería.</span></a>
+    </div>
+    <p class="nota">Prototipo de trabajo. Las fotos del carrusel son recortes de capturas hasta descargar las originales.</p>
+  </main>
+</body>
+</html>

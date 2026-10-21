@@ -1,0 +1,147 @@
+/* Cetárea El Musel — versión fiel a la web anterior (prototipo) */
+:root {
+  --rojo: #c8232c;
+  --rojo-oscuro: #a51b23;
+  --marino: #2b2c4f;
+  --texto: #555;
+  --gris: #f2f2f2;
+  --borde: #e5e5e5;
+  --ancho: 1140px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--texto);
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.65;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--rojo); }
+.contenedor { max-width: var(--ancho); margin: 0 auto; padding: 0 16px; }
+
+/* Franja superior */
+.franja { background: var(--rojo); color: #fff; font-size: 12px; }
+.franja .contenedor { display: flex; justify-content: space-between; gap: 12px; padding-top: 6px; padding-bottom: 6px; flex-wrap: wrap; }
+.franja a { color: #fff; text-decoration: none; }
+.franja span + span::before { content: "|"; margin: 0 10px; opacity: .7; }
+
+/* Cabecera */
+.cabecera { text-align: center; padding: 18px 0 14px; border-bottom: 1px solid var(--borde); }
+.cabecera img { height: 46px; margin: 0 auto; }
+.menu { border-bottom: 1px solid var(--borde); box-shadow: 0 4px 8px rgba(0,0,0,.05); position: sticky; top: 0; background: #fff; z-index: 10; }
+.menu ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+.menu li { position: relative; }
+.menu a { display: block; padding: 12px 12px; color: #333; text-decoration: none; font-size: 14px; }
+.menu a.activo { box-shadow: inset 0 -2px 0 var(--rojo); }
+.menu .sub { display: none; position: absolute; top: 100%; left: 0; background: #fff; min-width: 210px; box-shadow: 0 6px 16px rgba(0,0,0,.12); text-align: left; flex-direction: column; }
+.menu li:hover > .sub, .menu li:focus-within > .sub { display: flex; }
+.menu .tiene-sub > a::after { content: " ▾"; font-size: 11px; }
+
+/* Carrusel */
+.carrusel { position: relative; height: 560px; overflow: hidden; background: #222; }
+.carrusel .slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s; }
+.carrusel .slide.activa { opacity: 1; }
+.carrusel .slide::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.25); }
+.carrusel .texto { position: absolute; z-index: 2; left: 0; right: 0; top: 50%; transform: translateY(-50%); color: #fff; }
+.carrusel h1 { font-size: 30px; margin: 0 0 6px; text-transform: uppercase; letter-spacing: .5px; }
+.carrusel h2 { font-size: 22px; font-weight: 500; margin: 0 0 20px; text-transform: uppercase; }
+.boton { display: inline-block; background: var(--rojo); color: #fff; text-decoration: none; padding: 9px 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; border: 0; cursor: pointer; }
+.boton:hover { background: var(--rojo-oscuro); }
+.boton.negro { background: #222; text-transform: none; font-size: 13px; }
+.puntos { position: absolute; z-index: 3; bottom: 18px; right: 24px; display: flex; gap: 6px; }
+.puntos button { width: 18px; height: 4px; border: 0; background: rgba(255,255,255,.5); cursor: pointer; padding: 0; }
+.puntos button.activo { background: #fff; }
+
+/* Secciones */
+.seccion { padding: 56px 0; }
+.seccion.gris { background: var(--gris); }
+.centrado { text-align: center; }
+.intro { max-width: 860px; margin: 0 auto; text-align: center; }
+.intro h2 { color: #444; font-size: 20px; }
+.intro strong { color: #333; }
+.titulo-seccion { color: var(--rojo); font-size: 26px; margin: 0; font-weight: 500; }
+.subtitulo { margin: 4px 0 30px; color: #666; }
+
+.tarjetas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.tarjeta { background: #fff; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.05); padding-bottom: 18px; }
+.tarjeta h3 { font-size: 14px; text-transform: uppercase; color: #222; margin: 16px 12px 8px; }
+.tarjeta h3::after { content: ""; display: block; width: 22px; height: 2px; background: var(--rojo); margin: 10px auto 0; }
+.tarjeta p { font-size: 12px; text-transform: uppercase; color: #999; margin: 0 14px; }
+
+.noticias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.noticia { border: 1px solid var(--borde); }
+.noticia img { aspect-ratio: 344/218; object-fit: cover; width: 100%; }
+.noticia div { padding: 10px 14px 14px; }
+.noticia h3 { font-size: 16px; color: #222; margin: 0 0 6px; }
+.noticia p { font-size: 13px; margin: 0 0 10px; }
+.noticia a.mas { display: block; text-align: right; color: #222; font-weight: 600; font-size: 13px; text-decoration: none; }
+
+/* Páginas interiores */
+.pagina { padding: 30px 0 60px; }
+.pagina h1 { font-weight: 400; color: #333; font-size: 34px; margin: 0; }
+.pagina h1::after { content: ""; display: block; width: 36px; height: 3px; background: var(--rojo); margin-top: 8px; }
+.pagina h2 { font-weight: 400; color: #555; font-size: 20px; margin: 28px 0 18px; }
+.pagina .foto { margin: 18px 0 22px; max-height: 380px; width: 100%; object-fit: cover; }
+
+.lista-recetas article { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--borde); }
+.lista-recetas img { width: 200px; aspect-ratio: 344/218; object-fit: cover; }
+.lista-recetas h2 { color: var(--rojo); margin: 0 0 6px; font-size: 21px; }
+.lista-recetas time { color: #999; font-size: 13px; }
+.lista-recetas .sin-foto { width: 200px; aspect-ratio: 344/218; background: var(--gris); display: grid; place-items: center; color: #aaa; font-size: 12px; }
+
+table.horario { width: 100%; border-collapse: collapse; margin-top: 16px; text-align: center; }
+.horario th { background: #eee; font-weight: 400; padding: 12px; }
+.horario td { padding: 12px; border-bottom: 1px solid var(--borde); }
+.horario td:first-child { font-weight: 600; color: #444; }
+
+.contacto { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+.contacto h2 { font-size: 17px; font-weight: 600; color: #444; border-bottom: 1px solid var(--borde); padding-bottom: 12px; margin: 0 0 16px; }
+.form-fila { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.contacto input, .contacto textarea { width: 100%; padding: 9px 10px; border: 1px solid #ccc; font: inherit; margin-bottom: 10px; }
+.privacidad { height: 70px; overflow: auto; background: #eef0f2; border: 1px solid #ccc; padding: 8px; font-size: 13px; margin-bottom: 8px; }
+.datos dl { margin: 0; }
+.datos dt { color: #444; margin-top: 14px; }
+.datos dd { margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--borde); }
+.mapa { width: 100%; height: 320px; border: 0; margin-top: 36px; }
+
+.aviso { background: #fff7e0; border: 1px solid #f0d68a; padding: 10px 14px; font-size: 13px; margin: 16px 0; }
+
+/* Pie */
+.pie { background: var(--gris); padding: 24px 0 18px; font-size: 14px; }
+.pie .legales { text-align: center; }
+.pie .legales a { color: #333; text-decoration: none; margin: 0 8px; }
+.pie .logos { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px; margin: 18px 0; padding-bottom: 18px; border-bottom: 1px solid #ddd; }
+.pie .logos img { max-height: 70px; width: auto; }
+.pie .final { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.pie .final a { color: #333; text-decoration: none; margin-left: 12px; }
+
+/* Móvil */
+@media (max-width: 900px) {
+  .tarjetas { grid-template-columns: repeat(2, 1fr); }
+  .noticias { grid-template-columns: 1fr 1fr; }
+  .contacto { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .carrusel { height: 420px; }
+  .carrusel h1 { font-size: 22px; }
+  .carrusel h2 { font-size: 16px; }
+  .tarjetas, .noticias { grid-template-columns: 1fr; }
+  .menu a { padding: 10px 8px; font-size: 13px; }
+  .lista-recetas article { grid-template-columns: 1fr; }
+  .lista-recetas img, .lista-recetas .sin-foto { width: 100%; }
+  .form-fila { grid-template-columns: 1fr; }
+  .franja .contenedor { justify-content: center; }
+  .pie .final { justify-content: center; text-align: center; }
+}
+
+/* Recetas */
+.receta time { color: #999; font-size: 13px; }
+.receta .lista { padding-left: 22px; }
+.receta .lista li { margin-bottom: 8px; }
+.receta h3 { color: #333; font-size: 17px; margin: 26px 0 10px; }
+.receta .destacado { font-size: 18px; color: #444; }
+table.tiempos { border-collapse: collapse; margin: 8px 0 18px; min-width: 300px; }
+.tiempos th { background: #eee; font-weight: 600; padding: 8px 14px; text-align: left; }
+.tiempos td { padding: 8px 14px; border-bottom: 1px solid var(--borde); }

@@ -1,0 +1,22 @@
+PROTOTIPOS WEB - CETAREA EL MUSEL
+=================================
+
+Abrir: doble clic en index.html (elige entre las dos versiones).
+
+  fiel/       Misma estructura que la web anterior, con fallos corregidos.
+  renovada/   Diseño actual de una sola página, con sección de hostelería y WhatsApp.
+  assets/img/ Logo, fotos y logos de la subvención (compartidos por las dos versiones).
+
+IMPORTANTE - FOTOS
+Las fotos del carrusel son recortes de las capturas y llevan el texto antiguo
+"impreso" encima. Para poner las originales limpias:
+  clic derecho en descargar-imagenes-originales.ps1 > "Ejecutar con PowerShell".
+Los recortes quedan guardados en assets\img\recortes-temporales.
+
+PENDIENTE (marcado en amarillo en las páginas)
+- Número de WhatsApp (buscar 34XXXXXXXXX en los .html).
+- Enlaces reales de Facebook, Instagram y YouTube.
+- Confirmar horario.
+- Texto de la página de Subvención FEMP y textos legales.
+- Historia de la empresa para "¿Quiénes somos?".
+- Formulario de contacto (ahora no envía).
